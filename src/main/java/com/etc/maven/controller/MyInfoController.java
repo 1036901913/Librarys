@@ -69,4 +69,19 @@ public class MyInfoController {
         }
         return map;
     }
+
+    @RequestMapping("/update_info")
+    public Map<String, Object> updateInfo(MyInfo info) {
+        Map<String, Object> map = new HashMap<>();
+        int updateResult = infoService.updateInfo(info);
+        if (updateResult != -1) {
+            CacheUtil.del("infos");
+            map.put("code", "200");
+            map.put("msg", "success");
+        } else {
+            map.put("code", "201");
+            map.put("msg", "fail");
+        }
+        return map;
+    }
 }

@@ -10,4 +10,6 @@ public interface MyInfoService {
     List<MyInfo> queryInfo();
 
     int delInfo(Integer mid);
+
+    int updateInfo(MyInfo info);
 }

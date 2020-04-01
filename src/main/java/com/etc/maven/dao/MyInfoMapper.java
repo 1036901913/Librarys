@@ -11,4 +11,6 @@ public interface MyInfoMapper {
     List<MyInfo> queryInfo();
 
     int delInfo(Integer mid);
+
+    int updateInfo(MyInfo info);
 }

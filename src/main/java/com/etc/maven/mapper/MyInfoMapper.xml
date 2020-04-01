@@ -31,57 +31,20 @@
     <delete id="delInfo" parameterType="java.lang.Integer">
         delete from tb_myinfo where mid = #{mid}
     </delete>
-    <!--<insert id="insertSelective" parameterType="com.etc.maven.domain.MyInfo" >
-      insert into tb_myinfo
-      <trim prefix="(" suffix=")" suffixOverrides="," >
-        <if test="mid != null" >
-          mid,
-        </if>
-        <if test="mname != null" >
-          mname,
-        </if>
-        <if test="mphone != null" >
-          mphone,
-        </if>
-        <if test="mimg != null" >
-          mimg,
-        </if>
-      </trim>
-      <trim prefix="values (" suffix=")" suffixOverrides="," >
-        <if test="mid != null" >
-          #{mid,jdbcType=INTEGER},
-        </if>
-        <if test="mname != null" >
-          #{mname,jdbcType=VARCHAR},
-        </if>
-        <if test="mphone != null" >
-          #{mphone,jdbcType=VARCHAR},
-        </if>
-        <if test="mimg != null" >
-          #{mimg,jdbcType=VARCHAR},
-        </if>
-      </trim>
-    </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.etc.maven.domain.MyInfo" >
-      update tb_myinfo
-      <set >
-        <if test="mname != null" >
-          mname = #{mname,jdbcType=VARCHAR},
-        </if>
-        <if test="mphone != null" >
-          mphone = #{mphone,jdbcType=VARCHAR},
-        </if>
-        <if test="mimg != null" >
-          mimg = #{mimg,jdbcType=VARCHAR},
-        </if>
-      </set>
-      where mid = #{mid,jdbcType=INTEGER}
+
+    <update id="updateInfo" parameterType="com.etc.maven.domain.MyInfo">
+        update tb_myinfo
+        <set>
+            <if test="mname != null">
+                mname = #{mname,jdbcType=VARCHAR},
+            </if>
+            <if test="mphone != null">
+                mphone = #{mphone,jdbcType=VARCHAR},
+            </if>
+            <if test="mimg != null">
+                mimg = #{mimg,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where mid = #{mid,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.etc.maven.domain.MyInfo" >
-      update tb_myinfo
-      set mname = #{mname,jdbcType=VARCHAR},
-        mphone = #{mphone,jdbcType=VARCHAR},
-        mimg = #{mimg,jdbcType=VARCHAR}
-      where mid = #{mid,jdbcType=INTEGER}
-    </update>-->
 </mapper>

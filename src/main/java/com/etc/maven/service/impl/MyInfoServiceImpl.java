@@ -28,4 +28,9 @@ public class MyInfoServiceImpl implements MyInfoService {
     public int delInfo(Integer mid) {
         return infoMapper.delInfo(mid);
     }
+
+    @Override
+    public int updateInfo(MyInfo info) {
+        return infoMapper.updateInfo(info);
+    }
 }
