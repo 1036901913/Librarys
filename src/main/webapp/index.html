@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+<script src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var arr = [1, 2, 3, 4, 5];
+        $.ajax({
+            url: 'queryAllInfo',
+            data: {"arr": arr, "name": "tom"},
+            dataType: "json",
+            type: "post",
+            traditional: true,
+            success: function (data) {
+                console.log(data);
+            }
+        })
+    })
+
+</script>
+</html>
