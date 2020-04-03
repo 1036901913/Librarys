@@ -27,6 +27,12 @@
         <include refid="Base_Column_List"></include>
         from tb_myinfo
     </select>
+    <select id="queryAllInfo" resultType="java.util.Map">
+
+        select
+        <include refid="Base_Column_List"></include>
+        from tb_myinfo
+    </select>
 
     <delete id="delInfo" parameterType="java.lang.Integer">
         delete from tb_myinfo where mid = #{mid}
